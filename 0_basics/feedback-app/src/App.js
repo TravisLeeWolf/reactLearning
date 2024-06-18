@@ -1,12 +1,16 @@
+import { useState } from 'react'
 import Header from "./components/Header"
-import FeedbackItem from "./components/FeedbackItem"
+import FeedbackData from "./data/FeedbackData"
+import FeedbackList from './components/FeedbackList'
 
 function App() {
+    const [feedback, setFeedback] = useState(FeedbackData)
+
     return (
         <div className="bg-indigo-950 text-white min-h-screen">
             <Header />
             <div className="px-2">
-                <FeedbackItem />
+                <FeedbackList feedback={feedback} />
             </div>
         </div>
     )
